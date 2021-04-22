@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Muhammed Rahif | Personal Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h3 id="nav" class="logo">Muhammed<span> Rahif</span></h3>
+                <div class="hamburger-menu close">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </nav>
+
+        <h1 class="big-title translate" data-speed="0.1">I'm a <b id="main-title"></b></h1>
+
+        <img src="img/person.png" class="person translate" data-speed="-0.25" alt="">
+        <img src="img/mountain1.png" class="mountain1 translate" data-speed="-0.2" alt="">
+        <img src="img/mountain2.png" class="mountain2 translate" data-speed="0.4" alt="">
+        <img src="img/mountain3.png" class="mountain3 translate" data-speed="0.3" alt="">
+        <img src="img/sky.png" class="sky translate" data-speed="0.5" alt="">
+    </header>
+
+    <section>
+        <div class="shadow"></div>
+
+        <div id="about" class="container">
+            <div class="content opacity">
+                <h3 class="title">
+                    About
+                    <div class="border"></div>
+                </h3>
+                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque officiis quos expedita
+                    ipsa, a quidem inventore voluptates debitis accusamus tenetur qui et voluptas dicta, culpa earum,
+                    doloribus odio consectetur consequuntur soluta quasi nobis! Deserunt voluptatum reiciendis iure
+                    expedita sequi quisquam laboriosam temporibus exercitationem.</p>
+            </div>
+
+            <div class="imgContainer opacity">
+                <img src="img/image.jpg" alt="">
+            </div>
+        </div>
+
+
+
+        <!-- Menu -->
+        <div style="display: none;" id="menu" class="menu">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Catogory</a></li>
+                <li><a href="#">Conclusion</a></li>
+            </ul>
+            <i class="fa fa-times close"></i>
+        </div>
+    </section>
+
+
+    <script src="app.js"></script>
+    <script src="app2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
+    <script>
+        $(".close").click((e) => {
+            let menu = document.getElementById("menu");
+            if (menu.style.display === "none") {
+                $("#menu").fadeIn(500, () => {
+                    menu.style.display = "block";
+                });
+            } else {
+                $("#menu").fadeOut(500, () => {
+                    menu.style.display = "none";
+                })
+            }
+        })
+    </script>
+    <script>
+        anime.timeline()
+            .add({
+                targets: 'h1',
+                translateY: +400,
+                duration: 1000,
+                opacity: 0,
+                delay: 0
+            }).add({
+                targets: 'h1',
+                opacity: 1,
+                duration: 1000,
+                translateY: 0,
+                delay: 750
+            });
+    </script>
+    <script>
+        gsap.to("#nav", {
+            duration: .5,
+            y: -200,
+            scale: 1,
+            ease: 'back'
+        });
+        gsap.to("#nav", {
+            duration: .5,
+            y: 0,
+            scale: 1,
+            ease: 'back',
+            delay: 1
+        });
+        gsap.to(".hamburger-menu", {
+            duration: .5,
+            y: -200,
+            scale: 1,
+            ease: 'back'
+        });
+        gsap.to(".hamburger-menu", {
+            duration: .5,
+            y: 0,
+            scale: 1,
+            ease: 'back',
+            delay: 1
+        });
+    </script>
+</body>
+
+</html>
